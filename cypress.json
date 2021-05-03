@@ -1,5 +1,10 @@
 {
     "projectId": "2jrsy1",
     "screenshotOnRunFailure": false,
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 10000,
+    "baseUrl":"https://removenikud.dicta.org.il/",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
 }
