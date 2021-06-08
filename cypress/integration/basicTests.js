@@ -32,7 +32,7 @@ sizes.forEach((size) => {
             cy.get('#nikud-text').type('מֹשֶׁה קִ⁠בֵּל תּוֹרָה מִסִּינַי')
             cy.get('[class="spinner"]').should('not.exist')
             cy.get('.results-content ').each($res=>{
-                cy.get($res).should('contain','משה קי⁠בל תורה מסיני')
+                cy.get($res).should('contain','משה ק⁠בל תורה מסיני')
             })
         })
     
