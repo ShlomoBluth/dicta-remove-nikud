@@ -4,7 +4,13 @@
     "defaultCommandTimeout": 10000,
     "baseUrl":"https://removenikud.dicta.org.il/",
     "reporter": "cypress-multi-reporters",
+    "failOnStatusCode": false,
     "reporterOptions": {
-        "configFile": "reporter-config.json"
+        "configFile": "dicta-shared/reporter-config.json"
+    },
+    "env":{
+        "TOOL_TESTS":true,
+        "REQUESTS_TESTS":false,
+        "RECORD_KEY":"198c7ae4-89cb-4533-84a4-c1e3933f4b54"
     }
 }

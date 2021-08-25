@@ -3,14 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "cy:run": "npm run runChrome & npm run runFirefox",
-    "cy:runSpec": "npm run runChrome -- --spec %npm_config_spec% & npm run runFirefox -- --spec %npm_config_spec%",
-    "runChrome": "cypress run --browser chrome  --record --key 198c7ae4-89cb-4533-84a4-c1e3933f4b54",
-    "runFirefox": "cypress run --browser firefox  --record --key 198c7ae4-89cb-4533-84a4-c1e3933f4b54",
-    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
-    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShlomoBluth/dicta-remove-nikud.git"
@@ -22,7 +15,7 @@
   },
   "homepage": "https://github.com/ShlomoBluth/dicta-remove-nikud#readme",
   "devDependencies": {
-    "cypress": "^7.2.0",
+    "cypress": "^8.3.0",
     "cypress-multi-reporters": "^1.5.0",
     "mocha": "^8.3.2",
     "mochawesome": "^6.2.2",
