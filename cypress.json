@@ -9,6 +9,8 @@
         "configFile": "dicta-shared/reporter-config.json"
     },
     "env":{
+        "DEV_URL":"",
+        "LIVE_URL":"https://removenikud.dicta.org.il/",
         "TOOL_TESTS":true,
         "REQUESTS_TESTS":false,
         "RECORD_KEY":"198c7ae4-89cb-4533-84a4-c1e3933f4b54"

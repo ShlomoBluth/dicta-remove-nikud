@@ -4,40 +4,47 @@
 
 ////run tests on requests from remove nikud run 
 
-let sizes = ['iphone-x',[1000, 660]]
+const urls = new Map();
+urls.set('live',Cypress.env('LIVE_URL'))
+//urls.set('dev',Cypress.env('DEV_URL')) 
+
+const sizes= new Map();
+sizes.set('desktop',[1000, 660])
+sizes.set('mobile','iphone-x')
 
 
+urls.forEach((urlValue,urlKey)=>{
 
-sizes.forEach((size) => {
+    sizes.forEach((sizeValue,sizeKey) => {
 
     
-
-    describe('RequestsTests',()=>{
+        describe('RequestsTests '+urlKey+' '+sizeKey,()=>{
     
-        beforeEach(() => {
-            cy.screenSize({size:size})
-            cy.visitpage({url:'/'})
-        })
-        
-      
-    
-        it('Error message for tipsoundplay response with status code 500 when clicking the run button of wordplay page'
-        ,()=>{
-           cy.removeNikudRequest({
-               url:'/api',
-               status:500,
-               message: 'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר'
-           })
-        })
-    
-        
-        it('Error message for tipsoundplay response with a delay of 3 minutes when clicking the run button'+
-        ' of wordplay page',()=>{
-            cy.removeNikudRequest({
-                url:'/api',
-                message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
-                delaySeconds: 60*3
+            beforeEach(() => {
+                cy.screenSize({size:sizeValue})
+                cy.visitpage({url:urlValue})
             })
+    
+        
+            it('Error message for tipsoundplay response with status code 500 when clicking the run button of wordplay page'
+            ,()=>{
+               cy.removeNikudRequest({
+                   url:'/api',
+                   status:500,
+                   message: 'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר'
+               })
+            })
+        
+            
+            it('Error message for tipsoundplay response with a delay of 3 minutes when clicking the run button'+
+            ' of wordplay page',()=>{
+                cy.removeNikudRequest({
+                    url:'/api',
+                    message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
+                    delaySeconds: 60*3
+                })
+            })
+    
         })
     })
 })
